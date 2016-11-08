@@ -28,7 +28,7 @@ export class Menu extends Component {
                     )}
                     anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
                     targetOrigin={{ horizontal: 'left', vertical: 'top' }}
-                    maxHeight={500}
+                    maxHeight={1000}
                     value={this.props.animation}
                     onChange={this.handleChange}
                 >
@@ -42,6 +42,7 @@ export class Menu extends Component {
                     <MenuItem value={Animations.Hexagon} primaryText="Hexagon" />
                     <MenuItem value={Animations.Ball} primaryText="Ball" />
                     <MenuItem value={Animations.Snail} primaryText="Snail" />
+                    <MenuItem value={Animations.Infinity} primaryText="Infinity" />
                 </IconMenu>
             </div>
         );

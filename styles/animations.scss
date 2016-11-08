@@ -117,3 +117,19 @@
     transform: translateX(300px);
   }
 }
+
+@keyframes a {
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes moveInfinity {
+  0% {
+    border-radius: 100%;
+  }
+  100% {
+    transform: rotateY(360deg) rotateZ(360deg);
+    border-radius: 100%;
+  }
+}

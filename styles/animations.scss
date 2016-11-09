@@ -133,3 +133,12 @@
     border-radius: 100%;
   }
 }
+
+@keyframes spiral-turning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

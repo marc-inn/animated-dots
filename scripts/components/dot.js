@@ -12,7 +12,7 @@ export class Dot extends Component {
             <div
                 className={classNames("dot animated", this.props.className)}
                 style={this.props.style}
-            ><span/></div>
+            ><div className="innerDot"/></div>
         );
     }
 }

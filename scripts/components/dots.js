@@ -14,6 +14,7 @@ import { HexagonDot } from './dots/hexagon';
 import { BallDot } from './dots/ball';
 import { SnailDot } from './dots/snail';
 import { InfinityDot } from './dots/infinity';
+import { SpiralDot } from './dots/spiral';
 
 export class Dots extends Component {
     static propTypes = {
@@ -29,7 +30,8 @@ export class Dots extends Component {
             Animations.Hexagon,
             Animations.Ball,
             Animations.Snail,
-            Animations.Infinity
+            Animations.Infinity,
+            Animations.Spiral
         ]).isRequired
     };
 
@@ -57,6 +59,8 @@ export class Dots extends Component {
                 return SnailDot;
             case Animations.Infinity:
                 return InfinityDot;
+            case Animations.Spiral:
+                return SpiralDot;
             default:
                 throw new Error(`Animation type ${this.props.animation} is not defined.`);
         }

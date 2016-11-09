@@ -79,6 +79,14 @@ body {
       height: 250px;
     }
 
+    &.spiral {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 250px;
+      height: 250px;
+    }
+
     &.hexagon {
       position: absolute;
       top: 0;
@@ -121,7 +129,6 @@ body {
       transform: translate(-50%);
       animation: rotate 10s linear 0s infinite;
     }
-
     > .dot {
       position: absolute;
       top: 0;
@@ -133,6 +140,41 @@ body {
       border-radius: $dot-size / 2;
 
       &.animated {
+
+        &.spiral {
+
+          @for $i from 1 through $dot-count {
+            &:nth-child(#{$i}) {
+              $translation: $i*10px+10;
+              @if $i%2==0 {
+                $translation: -$translation;
+              }
+
+              .innerDot {
+                position: relative;
+                width: #{20*$i}px;
+                margin: auto;
+                &:before, &:after {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  width: 10px;
+                  height: 10px;
+                  background: $dot-color;
+                  border-radius: 50%;
+                }
+                &:before {
+                  right: 0;
+                }
+                &:after {
+                  left: 0;
+                }
+              }
+              animation: spiral-turning #{15000/(($dot-count*2)-$i)}ms infinite linear;
+            }
+          }
+        }
+
         &.vertical {
           animation-name: vertical;
         }
@@ -171,12 +213,12 @@ body {
             $rotate: $rotate + $angle;
             &:nth-child(#{$i}) {
               transform: translate($dot-size / 2) rotate(#{$rotate + 90}deg);
-              span {
+              .innerDot {
                 background: $dot-color;
               }
             }
           }
-          span {
+          .innerDot {
             position: absolute;
             width: $dot-size;
             height: $dot-size;

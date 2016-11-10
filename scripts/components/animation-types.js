@@ -10,3 +10,4 @@ export const Ball = 'ball';
 export const Snail = 'snail';
 export const Infinity = 'infinity';
 export const Spiral = 'spiral';
+export const Wheels = 'wheels';

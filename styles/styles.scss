@@ -71,7 +71,7 @@ body {
 
   .dots {
 
-    &.snail {
+    &.snail, &.wheels {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -129,6 +129,7 @@ body {
       transform: translate(-50%);
       animation: rotate 10s linear 0s infinite;
     }
+
     > .dot {
       position: absolute;
       top: 0;
@@ -253,6 +254,35 @@ body {
             border-radius: 100%;
             animation: a $dur infinite alternate;
             animation-timing-function: nth($fns, 1);
+          }
+        }
+
+        &.wheels {
+          position: absolute;
+          top: -1*$size;
+          height: $size*2;
+          background-color: transparent;
+          @for $j from 0 to $dot-count {
+            $jj: $j+1;
+            &:nth-child(#{$jj}) {
+              transform: rotate($da*$j);
+              &:after {
+                animation-delay: $ddur*$j*4;
+              }
+            }
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%) translateY(-50%);
+            width: $dot-size;
+            height: $dot-size;
+            z-index: 100;
+            background-color: $dot-color;
+            border-radius: 100%;
+            animation: a $dur infinite alternate;
+            animation-timing-function: nth($fns, 2);
           }
         }
 

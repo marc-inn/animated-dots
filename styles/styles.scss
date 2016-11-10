@@ -79,6 +79,14 @@ body {
       height: 250px;
     }
 
+    &.wave {
+      position: absolute;
+      top: 75%;
+      width: 1000px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     &.hexagon {
       position: absolute;
       top: 0;
@@ -275,6 +283,23 @@ body {
             border-radius: 100%;
             animation: a $dur infinite alternate;
             animation-timing-function: nth($fns, 2);
+          }
+        }
+
+        &.wave {
+          position: relative;
+          float: right;
+          height: $dot-size;
+          width: $dot-size;
+          top: 0px;
+          margin: auto 32px;
+          border-radius: 100%;
+          animation: orbAnimation 1.5s infinite alternate ease-in-out;
+
+          @for $i from 1 through $dot-count {
+            &:nth-child(#{$i}) {
+              animation-delay: (0.15s * 1) + ($i / 3);
+            }
           }
         }
 

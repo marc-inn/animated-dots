@@ -12,3 +12,4 @@ export const Infinity = 'infinity';
 export const Spiral = 'spiral';
 export const Wheels = 'wheels';
 export const Together = 'together';
+export const Wave = 'wave';

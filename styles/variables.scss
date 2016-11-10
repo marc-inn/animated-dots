@@ -71,7 +71,7 @@ $size: 250px;
 $da: 360deg/$dot-count;
 $dur: 2s;
 $ddur: $dur/$dot-count;
-$fns: cubic-bezier(0.46, 0.03, 0.52, 0.96), cubic-bezier(0.65, 0.05, 0.36, 1);
+$fns: cubic-bezier(0.46, 0.03, 0.52, 0.96), cubic-bezier(0.65, 0.05, 0.36, 1), cubic-bezier(0.65, 0.05, 0.36, 1);
 
 $sides: 6;
 $length: 2*$size*tan(180deg/$sides);

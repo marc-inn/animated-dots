@@ -45,6 +45,7 @@ export class Menu extends Component {
                     <MenuItem value={Animations.Infinity} primaryText="Infinity" />
                     <MenuItem value={Animations.Spiral} primaryText="Spiral" />
                     <MenuItem value={Animations.Wheels} primaryText="Wheels" />
+                    <MenuItem value={Animations.Together} primaryText="Together" />
                 </IconMenu>
             </div>
         );
